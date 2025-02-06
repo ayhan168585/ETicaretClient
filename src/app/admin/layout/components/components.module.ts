@@ -5,6 +5,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -18,7 +20,9 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     CommonModule,
     RouterModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
  exports:[
   HeaderComponent,
