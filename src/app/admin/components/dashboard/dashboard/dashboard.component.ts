@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AlertifyService, MessageType, Position } from '../../../../services/admin/alertify.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,24 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
+  constructor(private alertifyService:AlertifyService){}
+  ngOnInit(): void {
+    
+  }
+
+  m(){
+    this.alertifyService.message("Başarılı",{
+      messageType:MessageType.Warning,
+      delay:5,
+      position:Position.BottomRight,
+      dismissOthers:false
+    })
+
+  }
+  dismiss(){
+    this.alertifyService.dismiss()
+  }
 
 }
